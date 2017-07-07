@@ -20,6 +20,7 @@ Depending on your kubernetes version of your cluster and whether you implement R
     ```
     helm install --namespace kube-monitoring --name prometheus --set kubernetes.rbac=true --set server.service.type=NodePort
     ```
+
     
-    you can change the type to be the `LoadBalancer`, `ClusterIp (default)` or `NodePort` 
+you can change the type to be the `LoadBalancer`, `ClusterIp (default)` or `NodePort` 
 
