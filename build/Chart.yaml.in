@@ -1,4 +1,4 @@
-name: prometheus
+name: prometheus-chart
 version: ${CHART_VER}-${CHART_REL}
 description: Prometheus is a monitoring system and time series database.
 home: https://prometheus.io/
