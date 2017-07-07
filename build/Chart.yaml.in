@@ -1,4 +1,4 @@
-name: sample-chart
+name: prometheus
 version: ${CHART_VER}-${CHART_REL}
 description: Prometheus is a monitoring system and time series database.
 home: https://prometheus.io/
@@ -8,6 +8,6 @@ sources:
   - https://github.com/prometheus/prometheus
   - https://github.com/kubernetes/kube-state-metrics
 maintainers:
-  - name: Michael Goodness
-    email: mgoodness@gmail.com
+  - name: Alejandro Escobar
+    email: jaescobar.cell@gmail.com
 engine: gotpl
