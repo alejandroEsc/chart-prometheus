@@ -23,7 +23,7 @@ spec:
         component: "{{ .Values.kubeStateMetrics.name }}"
         release: {{ .Release.Name }}
     spec:
-      serviceAccountName: prometheus-account 
+      serviceAccountName: kube-state-metrics-account 
       containers:
         - name: {{ template "prometheus.name" . }}-{{ .Values.kubeStateMetrics.name }}
           image: "{{ .Values.kubeStateMetrics.image.repository }}:{{ .Values.kubeStateMetrics.image.tag }}"
