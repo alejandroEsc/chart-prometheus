@@ -22,7 +22,9 @@ spec:
         component: "{{ .Values.nodeExporter.name }}"
         release: {{ .Release.Name }}
     spec:
+      {{- if .Values.rbac.install }}
       serviceAccountName: node-exporter-account
+      {{- end }}
       containers:
         - name: {{ template "prometheus.name" . }}-{{ .Values.nodeExporter.name }}
           image: "{{ .Values.nodeExporter.image.repository }}:{{ .Values.nodeExporter.image.tag }}"

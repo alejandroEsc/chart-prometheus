@@ -18,7 +18,7 @@ Depending on your kubernetes version of your cluster and whether you implement R
 - k8s version > 1.6 with rbac
 
     ```
-    helm install prometheus-chart --namespace kube-monitoring --name prometheus --set kubernetes.rbac=true --set server.service.type=NodePort
+    helm install prometheus-chart --namespace kube-monitoring --name prometheus --set rbac.install=true --set server.service.type=NodePort
     ```
 
     

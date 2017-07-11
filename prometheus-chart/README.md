@@ -78,7 +78,6 @@ Parameter | Description | Default
 `configmapReload.image.repository` | configmap-reload container image repository | `jimmidyson/configmap-reload`
 `configmapReload.image.tag` | configmap-reload container image tag | `v0.1`
 `configmapReload.image.pullPolicy` | configmap-reload container image pull policy | `IfNotPresent`
-`kubernetes.rbac` | defaults to false, set to true when rbac is enabled | `false`
 `configmapReload.resources` | configmap-reload pod resource requests & limits | `{}`
 `kubeStateMetrics.enabled` | If true, create kube-state-metrics | `true`
 `kubeStateMetrics.name` | kube-state-metrics container name | `kube-state-metrics`
@@ -113,6 +112,8 @@ Parameter | Description | Default
 `nodeExporter.service.loadBalancerSourceRanges` | list of IP CIDRs allowed access to load balancer (if supported) | `[]`
 `nodeExporter.service.servicePort` | node-exporter service port | `9100`
 `nodeExporter.service.type` | type of node-exporter service to create | `ClusterIP`
+`rbac.install` | defaults to false, set to true when rbac is enabled | `false`
+`rbac.apiVersion` | version of rbac api | `v1beta1`
 `server.name` | Prometheus server container name | `server`
 `server.image.repository` | Prometheus server container image repository | `prom/prometheus`
 `server.image.tag` | Prometheus server container image tag | `v1.5.1`
