@@ -1,7 +1,7 @@
 ---
-{{- if .Values.kubernetes.rbac }}
+{{- if .Values.rbac.install }}
 kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/{{ .Values.rbac.apiVersion}}
 metadata:
   name: prometheus-server
 rules:
@@ -20,7 +20,7 @@ rules:
 - nonResourceURLs: ["/metrics"]
   verbs: ["get"]
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/{{ .Values.rbac.apiVersion}}
 kind: ClusterRole
 metadata:
   name: kube-state-metrics

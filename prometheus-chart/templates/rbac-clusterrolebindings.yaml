@@ -1,8 +1,8 @@
 ---
-{{- if .Values.kubernetes.rbac }}
+{{- if .Values.rbac.install }}
 ---
 kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/{{ .Values.rbac.apiVersion }}
 metadata:
   name: prometheus-server-binding
   namespace: {{ .Release.Namespace }}
@@ -17,7 +17,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ---
 kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/{{ .Values.rbac.apiVersion }}
 metadata:
   name: kube-state-metric-binding
   namespace: {{ .Release.Namespace }}
@@ -31,7 +31,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ---
 kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/{{ .Values.rbac.apiVersion }}
 metadata:
   name: node-exporter-binding
   namespace: {{ .Release.Namespace }}
@@ -45,7 +45,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ---
 kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/{{ .Values.rbac.apiVersion }}
 metadata:
   name: alert-manager-binding
   namespace: {{ .Release.Namespace }}
